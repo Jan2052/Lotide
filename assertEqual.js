@@ -1,13 +1,13 @@
+// Used to compare primitive data
+// Similar to assertArraysEqual.js (but compares objects instead)
+
+// Checking if input1 === input2
 const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-    return "true";
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`)
   }
-  console.log(`🛑🛑🛑 Assertion Failed: ${actual}  !== ${expected}`)
-  return "false";
 };
 
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(2, 1);
+module.exports = assertEqual;
