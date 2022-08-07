@@ -1,13 +1,5 @@
 const assertArraysEqual = require('../assertArraysEqual')
 
-const middle = require('../middle')
-
-
-console.log('assertArraysEqualTest')
-console.log(assertArraysEqual([1,2,3],[1,2,3]))
-console.log(assertArraysEqual([1,2,3],[1,2,4]))
-
-console.log('middleTest')
 assertArraysEqual(middle([1]), []) // => []
 assertArraysEqual(middle([1, 2]), []) // => []
 assertArraysEqual(middle([1, 2, 3]), [2]) // => [2]
