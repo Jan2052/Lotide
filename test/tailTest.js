@@ -6,7 +6,7 @@
 const assert = require('chai').assert;
 const tail = require('../tail')
 
-describe("#tail", () => {
+describe("Removes the first element in the array and return the rest", () => {
 
   it("returns 7 for [5, 6, 7]", () => {
     assert.deepEqual(tail([5, 6, 7]), [6, 7]);
