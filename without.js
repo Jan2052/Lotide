@@ -42,12 +42,11 @@ const without = (source, itemsToRemove) => {
         check = 1
       }
     }
-    if (check == 0) {
+    if (check === 0) {
       favorites.push(source[j])
     }
     check = 0 //resets check back into 0
   }
-  console.log(favorites)
   return favorites
 }
 
