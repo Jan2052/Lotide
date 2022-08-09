@@ -20,24 +20,47 @@ const eqArrays = (arrayOne, arrayTwo) => {
   return false;
 }
 
-const eqObjects = function (object1, object2) {
-  if (object1.isArray && object2.isArray) {
-    return eqArrays(object1, object2)
-  }
+// const eqObjects = function (object1, object2) {
+//   //if it is an array then we're inputting our objects into the eqArrays equation
+//   if (object1.isArray && object2.isArray) {
+//     return eqArrays(object1, object2)
+//   }
 
+//   const keyOne = Object.keys(object1).sort();
+//   const keyTwo = Object.keys(object2).sort();
+//   const valueOne = Object.values(object1).sort();
+//   const valueTwo = Object.values(object2).sort();
+//   // Compares the length of the object KEYS
+//   if (keyOne.length === keyTwo.length
+//   //Changes the KEY and VALUE to a string first and then compares them
+//     && JSON.stringify(keyOne) === JSON.stringify(keyTwo)
+//     && JSON.stringify(valueOne) === JSON.stringify(valueTwo)) {
+//     return true
+//   }
+//   return false
+// };
+
+const eqObjects = function (object1, object2) {
   const keyOne = Object.keys(object1).sort();
   const keyTwo = Object.keys(object2).sort();
   const valueOne = Object.values(object1).sort();
   const valueTwo = Object.values(object2).sort();
-  if (keyOne.length === keyTwo.length
-    && JSON.stringify(keyOne) === JSON.stringify(keyTwo)
-    && JSON.stringify(valueOne) === JSON.stringify(valueTwo)) {
-    return true
-  } else {
+  if (object1.length !== object2.length) {
+    return false
+  }
+  if (!object1.isArray || !object2.isArray) {
     return false
   }
 
-};
+  if (!eqArrays(keyOne, keyTwo)) {
+    return false
+  }
+
+  if (!eqArrays(valueOne, valueTwo)) {
+    return false
+  }
+  return true
+}
 
 object1 = { a: "1", b: "2" }
 object2 = { a: "1", b: "2" }
