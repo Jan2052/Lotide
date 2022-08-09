@@ -48,6 +48,7 @@ const without = (source, itemsToRemove) => {
     check = 0 //resets check back into 0
   }
   console.log(favorites)
+  return favorites
 }
 
 console.log(without([1, 2, 3], [1])) // => [2, 3]
